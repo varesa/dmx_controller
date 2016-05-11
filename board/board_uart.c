@@ -109,11 +109,11 @@ void uart_init() {
 
 uint8_t uart_values[12] = {
         1,
-        100,
         0,
         0,
         0,
-        0,
+        5,
+        127,
         0,
         0,
         0,

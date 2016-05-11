@@ -44,9 +44,16 @@ static THD_FUNCTION(dmx_thread, arg) {
 
         switch (mode) {
             case MANUAL_RGB:
-                dmx_set_r(adc_get_value(0));
+                uart_values[1] = adc_get_value(0);
+                uart_values[2] = adc_get_value(1);
+                uart_values[3] = adc_get_value(2);
+                uart_values[4] = adc_get_value(3);
+                uart_values[5] = adc_get_value(4);
+                /*dmx_set_r(adc_get_value(0));
                 dmx_set_g(adc_get_value(1));
                 dmx_set_b(adc_get_value(2));
+                dmx_set_pan(adc_get_value(3));
+                dmx_set_tilt(adc_get_value(4));*/
                 break;
             case AUTO_FADE:
                 r += 0.0002;
@@ -80,4 +87,12 @@ void dmx_set_g(uint8_t g) {
 
 void dmx_set_b(uint8_t b) {
     uart_values[5] = b;
+}
+
+void dmx_set_tilt(uint8_t tilt) {
+    uart_values[1] = tilt;
+}
+
+void dmx_set_pan(uint8_t pan) {
+    uart_values[2] = pan;
 }

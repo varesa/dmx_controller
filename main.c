@@ -59,7 +59,14 @@ int main() {
         lcd_goto_rc(1, 0);
         test_sliders();
 
-        chThdSleepMilliseconds(10);
+        if(get_btn_1()) {
+            dmx_set_mode(MANUAL_RGB);
+        }
+        if(get_btn_2()) {
+            dmx_set_mode(AUTO_FADE);
+        }
+
+        chThdSleepMilliseconds(100);
     }
 
     while(1) {

@@ -18,6 +18,8 @@ void dmx_set_mode(dmx_mode_t mode);
 void dmx_set_r(uint8_t r);
 void dmx_set_g(uint8_t g);
 void dmx_set_b(uint8_t b);
+void dmx_set_tilt(uint8_t tilt);
+void dmx_set_pan(uint8_t pan);
 
 void dmx_start_thread();
 
