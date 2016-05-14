@@ -7,7 +7,7 @@
 
 #include "stdint.h"
 
-extern uint8_t uart_values[12];
+extern uint8_t uart_values[10];
 
 void uart_init();
 void uart_send();

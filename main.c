@@ -63,6 +63,9 @@ int main() {
             dmx_set_mode(MANUAL_RGB);
         }
         if(get_btn_2()) {
+            dmx_set_mode(MANUAL_RGB2);
+        }
+        if(get_btn_3()) {
             dmx_set_mode(AUTO_FADE);
         }
 

@@ -81,7 +81,8 @@ uint16_t adc_get_value(uint8_t channel) {
     //uint16_t average = sum / ADC_BUF_DEPTH;
     //uint8_t normalized = average / 40;
 
-    uint16_t median = select(channel_values, ADC_BUF_DEPTH/2, ADC_BUF_DEPTH);
+    //uint16_t median = select(channel_values, ADC_BUF_DEPTH/2, ADC_BUF_DEPTH);
+    uint16_t median = channel_values[5];
     uint16_t normalized = median / 16;
 
     /*if (normalized > 100) {

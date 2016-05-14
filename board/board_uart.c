@@ -107,24 +107,23 @@ void uart_init() {
     uartStart(&UARTD1, &uart_cfg_1);
 }
 
-uint8_t uart_values[12] = {
+uint8_t uart_values[10] = {
         1,
-        0,
-        0,
-        0,
-        5,
-        127,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        0, // r
+        0, // g
+        0, // b
+        0, // pan
+        0, // tilt
+        0, // color wheel
+        0, // strobo
+        0, // dimmer
+        0, // gobo
+
 };
 
 void uart_send() {
     /*
      * Starts the transmission, it will be handled entirely in background.
      */
-    uartStartSend(&UARTD1, 12, uart_values);
+    uartStartSend(&UARTD1, 10, uart_values);
 }
